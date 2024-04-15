@@ -1,13 +1,25 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+    const otherNumber = target - array[i];
+    for (let j = 0; j < array.length; j++) {
+      if (array[j] === otherNumber && j !== i) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
+  O(n ** 2)
 */
 
 /* 
   Add your pseudocode here
+  // 1. Itterate through array numbers
+  // 2. Subtract number from target
+  // 3. Check if the reminder exists
 */
 
 /*
